@@ -56,7 +56,6 @@ public class EncDec {
                     writeFile(pathOutput, us.encrypt(data, shift, alg));
                     break;
             }
-
         } else {
             switch (mode) {
                 case "dec":
