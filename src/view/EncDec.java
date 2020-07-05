@@ -24,26 +24,29 @@ public class EncDec {
         String pathInput = "";
 
         for (int i = 0; i < args.length; i++) {
-            if (args[i].equals("-data")) {
-                data = args[i + 1].toCharArray();
+            switch (args[i]) {
+                case "-data":
+                    data = args[i + 1].toCharArray();
+                    break;
+                case "-mode":
+                    mode = args[i + 1];
+                    break;
+                case "-key":
+                    shift = Integer.parseInt(args[i + 1]);
+                    break;
+                case "-out":
+                    isOutput = true;
+                    pathOutput = args[i + 1];
+                    break;
+                case "-alg":
+                    alg = args[i + 1];
+                    break;
+                case "-in":
+                    pathInput = args[i + 1];
+                    data = readFile(pathInput);
+                    break;
             }
-            if (args[i].equals("-mode")) {
-                mode = args[i + 1];
-            }
-            if (args[i].equals("-key")) {
-                shift = Integer.parseInt(args[i + 1]);
-            }
-            if (args[i].equals("-out")) {
-                isOutput = true;
-                pathOutput = args[i + 1];
-            }
-            if (args[i].equals("-alg")) {
-                alg = args[i + 1];
-            }
-            if (args[i].equals("-in")) {
-                pathInput = args[i + 1];
-                data = readFile(pathInput);
-            }
+
         }
 
         UnicodeOrShift us = new UnicodeOrShift();
