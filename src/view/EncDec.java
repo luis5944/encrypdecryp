@@ -22,7 +22,7 @@ public class EncDec {
         String pathOutput = "";
         String alg = "shift";
         String pathInput = "";
-       
+
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("-data")) {
                 data = args[i + 1].toCharArray();
@@ -46,7 +46,6 @@ public class EncDec {
             }
         }
 
-        
         UnicodeOrShift us = new UnicodeOrShift();
         if (isOutput) {
             switch (mode) {
