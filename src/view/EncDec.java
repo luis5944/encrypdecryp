@@ -46,6 +46,7 @@ public class EncDec {
             }
         }
 
+        
         UnicodeOrShift us = new UnicodeOrShift();
         if (isOutput) {
             switch (mode) {
