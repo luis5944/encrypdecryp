@@ -23,6 +23,7 @@ public class EncDec {
         String alg = "shift";
         String pathInput = "";
 
+        
         for (int i = 0; i < args.length; i++) {
             if (args[i].equals("-data")) {
                 data = args[i + 1].toCharArray();
